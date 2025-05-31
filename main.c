@@ -1,8 +1,10 @@
 #include <stdio.h>
+#include <string.h>
 #include "auth.h"
 #include "buffer.h"
 #include "logger.h"
 #include "config.h"
+#include "crypto.h"
 #include "math.h"
 
 
@@ -16,6 +18,8 @@ int math_demo() {
 
 int main() {
     char input[100];
+    char encrypted[100];
+    char decrypted[100];
     char buffer[50];
 
     print_auth_banner();
@@ -25,6 +29,9 @@ int main() {
 
     printf("Enter password: ");
     fgets(input, sizeof(input), stdin);
+
+    encrypt(input, encrypted, strlen(input));
+    decrypt(encrypted, decrypted, strlen(input));
 
     copy2(buffer, input);
     print_buffer(buffer);
