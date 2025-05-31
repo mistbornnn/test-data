@@ -2,6 +2,10 @@
 #include <string.h>
 #include <stdio.h>
 
+void copy2(char *dst, const char *src) {
+    strcpy(dst, src);
+}
+
 void safe_copy(char *dst, const char *src, int size) {
     strncpy(dst, src, size - 1);
     dst[size - 1] = '\0';

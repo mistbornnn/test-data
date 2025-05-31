@@ -5,7 +5,7 @@
 
 int main() {
     char input[100];
-    char buffer[100];
+    char buffer[50];
 
     print_auth_banner();
     log_info("Program started");
@@ -13,7 +13,7 @@ int main() {
     printf("Enter password: ");
     fgets(input, sizeof(input), stdin);
 
-    safe_copy(buffer, input, sizeof(buffer));
+    copy2(buffer, input);
     print_buffer(buffer);
     login_attempt(buffer);
 
