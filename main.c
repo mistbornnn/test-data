@@ -3,6 +3,16 @@
 #include "buffer.h"
 #include "logger.h"
 #include "config.h"
+#include "math.h"
+
+
+int math_demo() {
+    int a = INT_MAX;
+    int b = 1;
+    int result = add(a, b);
+    printf("Result of add(INT_MAX, 1): %d\\n", result);
+    return result;
+}
 
 int main() {
     char input[100];
@@ -22,6 +32,8 @@ int main() {
 
     log_info("Program ended");
     logout();
+
+    math_demo()
 
     return 0;
 }
