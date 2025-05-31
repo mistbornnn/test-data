@@ -2,6 +2,7 @@
 #include "auth.h"
 #include "buffer.h"
 #include "logger.h"
+#include "config.h"
 
 int main() {
     char input[100];
@@ -9,6 +10,8 @@ int main() {
 
     print_auth_banner();
     log_info("Program started");
+
+    load_config("config.txt");
 
     printf("Enter password: ");
     fgets(input, sizeof(input), stdin);
