@@ -3,8 +3,16 @@
 #include <string.h>
 #include <stdio.h>
 
+#define PASSWORD "s3cr3t"
+
 int check_password(const char *input) {
-    return strcmp(input, "admin") == 0;
+    // strip newline character if present
+    size_t len = strlen(input);
+    if (len > 0 && input[len - 1] == '\n') {
+        ((char *)input)[len - 1] = '\0';
+    }
+
+    return strcmp(input, PASSWORD) == 0;
 }
 
 void login_attempt(const char *input) {
