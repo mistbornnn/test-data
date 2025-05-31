@@ -1,10 +1,6 @@
 # test-data
 This repository contains a mock C project designed to test mistborn.
 
-## Overview
-
-The project simulates a basic application with authentication, logging, encryption, and utility logic. It also includes intentionally added security bugs.
-
 ## Components
 
 - `main.c`: Central logic
