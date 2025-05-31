@@ -1,4 +1,5 @@
 #include "auth.h"
+#include "logger.h"
 #include <string.h>
 #include <stdio.h>
 
@@ -8,16 +9,19 @@ int check_password(const char *input) {
 
 void login_attempt(const char *input) {
     if (check_password(input)) {
-        printf("Login success\n");
+        log_info("Login success");
+        printf("Login success\\n");
     } else {
-        printf("Login failed\n");
+        log_warn("Login failed");
+        printf("Login failed\\n");
     }
 }
 
 void print_auth_banner() {
-    printf("=== Authentication System ===\n");
+    printf("=== Authentication System ===\\n");
 }
 
 void logout() {
-    printf("User logged out\n");
+    log_info("User logged out");
+    printf("User logged out\\n");
 }
